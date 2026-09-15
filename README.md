@@ -10,11 +10,19 @@ Jane wants to use Git to manage the versions of a paper stored in a file named *
 
 ```
 Write the Git commands below: 
-1. 
-2. 
-3. 
-4.  
-```
+
+2. 1. mkdir sc1
+   cd sc1
+   git init -b main
+
+2. echo "initial content" > paper.txt
+
+3. git add paper.txt
+   git commit -m "Initial commit"
+
+4. git restore --source HEAD paper.txt
+
+
 
 # Scenario 2
 
@@ -22,14 +30,22 @@ Joachin wants to use Git to manage the versions of a new Python package he is de
 
 ```
 COPY AND PASTE .gitignore here
-```
+```.secrets
+
 
 ```
 Write the Git commands below: 
-1. 
-2.
-3.
-4. 
+ 
+1. cd sc2
+   git init -b main
+
+2. git add .
+
+3. git commit -m "project kickoff"
+
+4. git remote add origin https://github.com/joachin/sc2
+   git push -u origin main
+ 
 ```
 
 ## Scenario 3
@@ -40,15 +56,25 @@ After cloning the repository, Sam creates and switches to a new branch named **f
 
 ```
 Write the Git commands below: 
-1. 
-2.
-3.
-4. 
-5.
-6.
-7.
-8.
-9.
-10.
-11. 
-```
+1. git clone https://github.com/bob/sc3
+   cd sc3
+
+2. git add README.md
+
+3. git commit -m "Add project README"
+
+4. git push -u origin main
+
+5. git checkout -b feature/search
+
+6. git add main.py
+
+7. git commit -m "Add search feature"
+
+8. git checkout main
+
+9. git pull
+
+10. git merge feature/search
+
+11. git push
